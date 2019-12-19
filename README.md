@@ -49,7 +49,7 @@ _layouts/default.vue_
       </v-container>
     </v-content>
     <v-footer :fixed="fixed" app>
-      <span>&copy; 2019</span>
+      <span>&copy; me</span>
     </v-footer>
   </v-app>
 </template>
@@ -62,7 +62,7 @@ _pages/index.vue_
   <v-layout>
     <v-flex class="text-center">
       <h1>Hello World!</h1>
-      <v-btn @click="getMessageAction">
+      <v-btn>
         <v-icon>email</v-icon>
       </v-btn>
     </v-flex>
