@@ -16,12 +16,13 @@ npm i -ED @nuxtjs/proxy css-loader svg-loader nuxt-webfontloader vue vuex axios
 _nuxt.config.js_
 
 ```js
-const isProd = process.env.NODE_ENV === 'production';
-
 export default {
   // ...skip other...
   css: [
     'material-design-icons-iconfont/dist/material-design-icons.css',
+  ],
+  modules: [
+    'nuxt-webfontloader',
   ],
   webfontloader: {
     google: {
@@ -29,20 +30,10 @@ export default {
       families: ['Roboto:100,300,400,500,700,900&display=swap'],
     }
   },
-  modules: [
-    'nuxt-webfontloader',
-  ],
   vuetify: {
     icons: {
       iconfont: 'mdiSvg' // || 'md' || 'fa' || 'fa4' || 'mdi', // default - only for display purposes
     },
-  },
-  build: {
-    extend (config, { isClient }) {
-      if (isProd && isClient) {
-        config.optimization.splitChunks.maxSize = 249856; // 244 Kib
-      }
-    }
   },
 };
 ```
